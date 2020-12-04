@@ -2,7 +2,7 @@ public class Computer {
     String name;
     int ramMemory;
     int hardDisk;
-    OperatingSystem os1 = new OperatingSystem("os1","6.0","64x",true, 20, 4);
+    OperatingSystem os;
 
     public Computer(String name, int ramMemory, int hardDisk) {
         this.name = name;
@@ -10,4 +10,18 @@ public class Computer {
         this.hardDisk = hardDisk;
 
     }
+    public String getName() {
+        return this.name;
+    }
+    public int getRamMemory() {
+        return this.ramMemory;
+    }
+    public int getHardDisk() {
+        return this.hardDisk;
+    }
+    public OperatingSystem getOs() {
+        return this.os;
+    }
+
+
 }

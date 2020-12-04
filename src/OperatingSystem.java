@@ -16,5 +16,23 @@ public class OperatingSystem {
         this.osRamRequirement = osRamRequirement;
         this.osSoftware = null;
     }
+    public String getOsName() {
+        return this.osName;
+    }
+    public String getOsVersion() {
+        return this.osVersion;
+    }
+    public String getOsArchitecture() {
+        return this.osArchitecture;
+    }
+    public boolean getOsOnlyCommand() {
+        return this.osOnlyCommand;
+    }
+    public int getOsSpaceRequirement() {
+        return this.osSpaceRequirement;
+    }
+    public int getOsRamRequirement() {
+        return this.osRamRequirement;
+    }
 
 }
