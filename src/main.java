@@ -8,7 +8,6 @@ public class main {
     int ramRestante = c1.ramMemory - os1.osRamRequirement;
     String nombreSystem = os1.osName;
     Computer c2 = new Computer("c1", ramRestante, espacioRestante, os1.osName);
-    public String[] osSoftware;
 
     private void ordenata() {
 
@@ -128,15 +127,14 @@ public class main {
                     int espacioRestanteAppS1 = espacioRestanteOsS1 - s1.softwareSpaceRequirement;
                     int ramRestanteOsS1 = c1.ramMemory - os1.osRamRequirement;
                     int ramRestanteAppS1 = ramRestanteOsS1 - s1.softwareRamRequirement;
-                    if (ramRestanteAppS1 < 0) {
-                        System.out.println("No te da la ram");
+                    if (ramRestanteAppS1 < 0 || espacioRestanteOsS1 <= 0) {
+                        System.out.println("No hay memorio o no hay espacio");
                         System.out.println("No se puede instalar la app");
                         añadirApps();
                     }
                     Computer c3 = new Computer("c1", ramRestanteAppS1, espacioRestanteAppS1, os1.osName);
                     enseñarOrdenador(c3);
-                    String[] osSoftware = new String[2];
-                    osSoftware[1]=s1.softwareName;
+                    //Array
                     continuar = 0;
                     break;
                 case 3:
@@ -153,8 +151,7 @@ public class main {
                     }
                     Computer c4 = new Computer("c1", ramRestanteAppS2, espacioRestanteAppS2, os1.osName);
                     enseñarOrdenador(c4);
-                    osSoftware = new String[2];
-                    osSoftware[2]=s2.softwareName;
+                    //Array
                     continuar = 0;
                     break;
                 case 4:
