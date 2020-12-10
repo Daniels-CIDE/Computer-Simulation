@@ -4,11 +4,10 @@ public class main {
 
     OperatingSystem os1 = new OperatingSystem("os1", "6.0", "64x", true, 20, 2);
     Computer c1 = new Computer("c1", 4, 100, null);
-    int espacioRestante = c1.hardDisk - os1.osSpaceRequirement;
-    int ramRestante = c1.ramMemory - os1.osRamRequirement;
-    String nombreSystem = os1.osName;
-    Computer c2 = new Computer("c1", ramRestante, espacioRestante, os1.osName);
-    public String[] osSoftware;
+    int espacioRestante = c1.getHardDisk() - os1.getOsSpaceRequirement();
+    int ramRestante = c1.getRamMemory() - os1.getOsRamRequirement();
+    String nombreSystem = os1.getOsName();
+    Computer c2 = new Computer("c1", ramRestante, espacioRestante, os1.getOsName());
 
     private void ordenata() {
 
@@ -109,7 +108,7 @@ public class main {
         System.out.println("Okey, pues vamos a empezar instalando aplicaciones");
         Software s1 = new Software("s1", "2.0", 5, 2);
         Software s2 = new Software("s2", "1.4.12", 2, 1);
-        System.out.println("  1.Lista de aplicacinoes?");
+        System.out.println("  1.Lista de aplicacinoes");
         System.out.println("  2.Instalar 's1' ");
         System.out.println("  3.Instalar 's2' ");
         System.out.println("  4.Atras");
@@ -120,41 +119,40 @@ public class main {
                 case 1:
                     enseñarApp(s1);
                     enseñarApp(s2);
+                    continuar = 0;
                     break;
                 case 2:
                     System.out.println("Especificacinoes de s1");
                     enseñarApp(s1);
-                    int espacioRestanteOsS1 = c1.hardDisk - os1.osSpaceRequirement;
-                    int espacioRestanteAppS1 = espacioRestanteOsS1 - s1.softwareSpaceRequirement;
-                    int ramRestanteOsS1 = c1.ramMemory - os1.osRamRequirement;
-                    int ramRestanteAppS1 = ramRestanteOsS1 - s1.softwareRamRequirement;
+                    int espacioRestanteOsS1 = c1.getHardDisk() - os1.getOsSpaceRequirement();
+                    int espacioRestanteAppS1 = espacioRestanteOsS1 - s1.getSoftwareSpaceRequirement();
+                    int ramRestanteOsS1 = c1.getRamMemory() - os1.getOsRamRequirement();
+                    int ramRestanteAppS1 = ramRestanteOsS1 - s1.getSoftwareRamRequirement();
                     if (ramRestanteAppS1 < 0) {
                         System.out.println("No te da la ram");
                         System.out.println("No se puede instalar la app");
                         añadirApps();
                     }
-                    Computer c3 = new Computer("c1", ramRestanteAppS1, espacioRestanteAppS1, os1.osName);
+                    Computer c3 = new Computer("c1", ramRestanteAppS1, espacioRestanteAppS1, os1.getOsName());
                     enseñarOrdenador(c3);
-                    String[] osSoftware = new String[2];
-                    osSoftware[1]=s1.softwareName;
+                    //Array
                     continuar = 0;
                     break;
                 case 3:
                     System.out.println("Especificacinoes de s2");
                     enseñarApp(s2);
-                    int espacioRestanteOsS2 = c1.hardDisk - os1.osSpaceRequirement;
-                    int espacioRestanteAppS2 = espacioRestanteOsS2 - s1.softwareSpaceRequirement;
-                    int ramRestanteOsS2 = c1.ramMemory - os1.osRamRequirement;
-                    int ramRestanteAppS2 = ramRestanteOsS2 - s1.softwareRamRequirement;
+                    int espacioRestanteOsS2 = c1.getHardDisk() - os1.getOsSpaceRequirement();
+                    int espacioRestanteAppS2 = espacioRestanteOsS2 - s1.getSoftwareSpaceRequirement();
+                    int ramRestanteOsS2 = c1.getRamMemory() - os1.getOsRamRequirement();
+                    int ramRestanteAppS2 = ramRestanteOsS2 - s1.getSoftwareRamRequirement();
                     if (ramRestanteAppS2 < 0) {
                         System.out.println("No te da la ram");
                         System.out.println("No se puede instalar la app");
                         añadirApps();
                     }
-                    Computer c4 = new Computer("c1", ramRestanteAppS2, espacioRestanteAppS2, os1.osName);
+                    Computer c4 = new Computer("c1", ramRestanteAppS2, espacioRestanteAppS2, os1.getOsName());
                     enseñarOrdenador(c4);
-                    osSoftware = new String[2];
-                    osSoftware[2]=s2.softwareName;
+                    //Array
                     continuar = 0;
                     break;
                 case 4:
@@ -182,10 +180,10 @@ public class main {
         System.out.println(" ");
     }
     public static void enseñarApp (Software app){
-        System.out.println("Nombre de la apliación: "+app.softwareName);
-        System.out.println("Version del software: "+app.softwareVersion);
-        System.out.println("Uso de ram de la app: "+app.softwareRamRequirement);
-        System.out.println("Espacio necesario: "+app.softwareSpaceRequirement);
+        System.out.println("Nombre de la apliación: "+ app.getSoftwareName());
+        System.out.println("Version del software: "+ app.getSoftwareVersion());
+        System.out.println("Uso de ram de la app: "+ app.getSoftwareRamRequirement());
+        System.out.println("Espacio necesario: "+ app.getSoftwareSpaceRequirement());
         System.out.println(" ");
     }
 
