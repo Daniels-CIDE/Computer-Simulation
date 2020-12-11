@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class OperatingSystem {
     String osName;
     String osVersion;
@@ -7,7 +5,7 @@ public class OperatingSystem {
     boolean osOnlyCommand;
     int osSpaceRequirement;
     int osRamRequirement;
-    ArrayList<Software> osSoftware = new ArrayList<Software>();
+    String[] osSoftware;
 
     public OperatingSystem(String osName, String osVersion, String osArchitecture, boolean osOnlyCommand, int osSpaceRequirement, int osRamRequirement) {
         this.osName = osName;
@@ -35,12 +33,6 @@ public class OperatingSystem {
     }
     public int getOsRamRequirement() {
         return this.osRamRequirement;
-    }
-    public void setOsSoftware(ArrayList<Software> osSoftware) {
-        this.osSoftware = osSoftware;
-    }
-    public void installSoftware(Software osSoftware){
-        this.osSoftware.add(osSoftware);
     }
 
 }

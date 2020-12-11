@@ -1,8 +1,8 @@
 public class Computer {
-    String name;
-    int ramMemory;
-    int hardDisk;
-    String os;
+    private String name;
+    private int ramMemory;
+    private int hardDisk;
+    private String os;
 
     public Computer(String name, int ramMemory, int hardDisk, String os) {
         this.name = name;
@@ -24,5 +24,16 @@ public class Computer {
         return this.os;
     }
 
-
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setRamMemory(int ramMemory) {
+        this.ramMemory = ramMemory;
+    }
+    public void setHardDisk(int hardDisk) {
+        this.hardDisk = hardDisk;
+    }
+    public void setOs(String os) {
+        this.os = os;
+    }
 }
