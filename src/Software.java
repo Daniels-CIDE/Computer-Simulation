@@ -36,4 +36,5 @@ public class Software {
     public void setSoftwareRamRequirement(int softwareRamRequirement) {
         this.softwareRamRequirement = softwareRamRequirement;
     }
+
 }

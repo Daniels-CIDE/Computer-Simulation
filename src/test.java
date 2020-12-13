@@ -17,9 +17,15 @@ public class test {
         c1.setOs(os1.getOsName());
         ensenarOrdenador(c1);
         System.out.println("Ahora vamos a instalar Aplicacinoes");
-        os1.instalarSoftware();
-        System.out.println("Lista de apps "+os1.getOsSoftware());
+        os1.instalarSoftware(s1,c1);
+        os1.instalarSoftware(s2,c1);
+        ensenarOrdenador(c1);
+        System.out.println("Lista de apps: ");
 
+        for (int i=0;i<os1.getOsSoftware().size();i++) {
+
+            System.out.println(os1.getOsSoftware().get(i));
+        }
     }
     public static void ensenarOrdenador (Computer pc){
         System.out.println("Nombre del PC:  " + pc.getName());
