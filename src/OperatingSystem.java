@@ -48,9 +48,6 @@ public class OperatingSystem {
         return osSoftware;
     }
 
-    Software s1 = new Software("Counter Strike", "2.0", 15, 3);
-    Software s2 = new Software("Utorrent", "1.4.12", 5, 2);
-
     public void setOsSoftware(ArrayList<Software> osSoftware) {
         this.osSoftware = osSoftware;
     }
@@ -65,5 +62,10 @@ public class OperatingSystem {
             System.out.println(" ");
         }
     }
+    public void unistallSoftware(Software osSoftware, Computer c1) {
+            this.osSoftware.remove(osSoftware);
+            c1.setHardDisk(c1.getHardDisk() + osSoftware.getSoftwareSpaceRequirement());
+            c1.setRamMemory(c1.getRamMemory() + osSoftware.getSoftwareRamRequirement());
 
+    }
 }

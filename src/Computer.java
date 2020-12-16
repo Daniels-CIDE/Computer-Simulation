@@ -3,6 +3,8 @@ public class Computer {
     private int ramMemory;
     private int hardDisk;
     private String os;
+    int hardDiskMax = 100;
+    int ramMemoryMax = 100;
 
     public Computer(String name, int ramMemory, int hardDisk, String os) {
         this.name = name;
@@ -35,5 +37,24 @@ public class Computer {
     }
     public void setOs(String os) {
         this.os = os;
+    }
+
+    public void instalarSO(OperatingSystem os) {
+        if (this.getHardDisk() >= os.getOsSpaceRequirement() && this.getRamMemory() >= os.getOsRamRequirement()) {
+            this.setHardDisk(this.getHardDisk() - os.getOsSpaceRequirement());
+            this.setRamMemory(this.getRamMemory() - os.getOsRamRequirement());
+            this.setOs(os.getOsName());
+        } else {
+            System.out.println("No hay espacio");
+            System.out.println(" ");
+        }
+    }
+    public void format(OperatingSystem os){
+        if (this.hardDisk < hardDiskMax && this.ramMemory < ramMemoryMax){
+            this.hardDisk = hardDiskMax;
+            this.ramMemory = ramMemoryMax;
+        }
+        os.getOsSoftware().clear();
+        this.setOs(null);
     }
 }

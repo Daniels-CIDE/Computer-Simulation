@@ -12,13 +12,16 @@ public class test {
 
         System.out.println("Instalando Sistema Operativo @guela");
         System.out.println(" ");
-        c1.setHardDisk(c1.getHardDisk()-os1.getOsSpaceRequirement());
-        c1.setRamMemory(c1.getRamMemory()-os1.getOsRamRequirement());
-        c1.setOs(os1.getOsName());
+        c1.instalarSO(os1);
         ensenarOrdenador(c1);
+
         System.out.println("Ahora vamos a instalar Aplicacinoes");
         os1.instalarSoftware(s1,c1);
         os1.instalarSoftware(s2,c1);
+        ensenarOrdenador(c1);
+
+        os1.unistallSoftware(s1,c1);
+        c1.format(os1);
         ensenarOrdenador(c1);
     }
     public static void ensenarOrdenador (Computer pc){
