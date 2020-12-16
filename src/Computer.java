@@ -4,7 +4,7 @@ public class Computer {
     private int hardDisk;
     private String os;
     int hardDiskMax = 100;
-    int ramMemoryMax = 100;
+    int ramMemoryMax = 8;
 
     public Computer(String name, int ramMemory, int hardDisk, String os) {
         this.name = name;
